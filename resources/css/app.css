@@ -1,0 +1,21 @@
+@import 'resources/css/themes/light.css';
+@import 'resources/css/themes/dark.css';
+@import "/node_modules/flag-icons/css/flag-icons.min.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+[x-cloak] { 
+  display: none !important; 
+}
+
+/* this css use to customize the autofill background of browser */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: var(--color-on-surface-600);
+}
+
