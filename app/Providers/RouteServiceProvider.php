@@ -7,16 +7,26 @@ use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvi
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\Facades\Route;
+use App\Events\OrderCreated;
+use App\Listeners\SendOrderCreatedNotification;
+
 
 class RouteServiceProvider extends ServiceProvider
 {
     /**
-     * The path to your application's "home" route.
+     * The event to listener mappings for the application.
      *
-     * Typically, users are redirected here after authentication.
-     *
-     * @var string
+     * @var array<class-string, array<int, class-string>>
      */
+    protected $listen = [
+        Registered::class => [
+            SendEmailVerificationNotification::class,
+        ],
+        OrderCreated::class => [
+            SendOrderCreatedNotification::class,
+        ],
+    ];
+
     public const HOME = '/home';
 
     /**

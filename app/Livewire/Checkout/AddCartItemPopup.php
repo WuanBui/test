@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire;
+namespace App\Livewire\Checkout;
 
 use App\Events\BrowserEvent;
 use App\Events\LivewireEvent;
@@ -84,6 +84,6 @@ class AddCartItemPopup extends Component
 
     public function render(): View
     {
-        return view('livewire.add-cart-item-popup');
+        return view('livewire.checkout.add-cart-item-popup');
     }
 }
